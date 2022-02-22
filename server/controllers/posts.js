@@ -24,3 +24,12 @@ export const createPost = async (req, res) => {
         res.status(409).json({message: e.message});
     }
 }
+
+export const updatePost = async (req, res) => {
+    const { id: _id } = req.params;
+    
+    if(!mongoos.Types.ObjectId.isValid(_id)) return res.status(404).send('Not found')
+
+    const updatedPost = await PostMessage.findByIdAndUpdate(_id, req.body, { new: true });
+    res.json(updatePost);
+}
