@@ -3,7 +3,6 @@ import { makeStyles } from '@mui/styles';
 
 
 export default makeStyles((theme) => {
-  console.log(theme);
   return {
   mainContainer: {
     display: 'flex',
