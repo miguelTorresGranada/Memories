@@ -16,7 +16,7 @@ const Posts = ({ setCurrentId }) => {
     const sortByDate = () => {return posts.sort((a,b) => {return moment(a.createdAt).isBefore(b.createdAt) ? 1 : -1});}
     useEffect(() => {
         console.log('sorting');
-        sortByDate();
+        posts.sort((a,b) => {return moment(a.createdAt).isBefore(b.createdAt) ? 1 : -1});
     }
     ,[posts]);
     
